@@ -1,0 +1,82 @@
+<div class="container mt-3">
+
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4 align-middle px-0">
+            <div class="card shadow bg-white adding-radius-login-card">
+                <div class="card-body">
+    <div class="row justify-content-center">
+        <h2 class="text-center login-color">
+            Login
+        </h2>
+    </div>
+    <!-- <div class="row justify-content-center">
+        <h6 class="text-center">Please enter your mobile number and password!</h6>
+    </div> -->
+    <div class="row justify-content-center">
+      <form [formGroup]="loginForm" (ngSubmit)="btn_onClickLogin()">
+        <div class="row form-group justify-content-center">
+            <div class="col-sm-12">
+                <input type="text" class="form-control form-control-lg" name="Mobile Number" autocomplete="off" placeholder="Username" maxlength="10" required formControlName="phone_number" onpaste="return false" [ngClass]="{ 'is-invalid': submitted && f['phone_number'].errors }"/>
+                <div *ngIf="submitted && f['phone_number'].errors" class="invalid-feedback">
+                 <div *ngIf="f['phone_number'].errors['required']">username is required</div>
+                 <div *ngIf="f['phone_number'].errors['pattern']">
+                    Mobile number must be 10 digit long
+                   </div>
+               </div> 
+              
+             </div>
+        </div>
+    <div class="row form-group justify-content-center">
+    <div class="col-sm-12">
+        <div style="position: relative;">
+            <input [type]="show ? 'text' : 'password'"  class="form-control form-control-lg" name="password" placeholder="Password" autocomplete="off" required formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"/>
+            <i [ngClass]="show ? 'bi-eye-fill' : 'bi-eye-slash-fill'" class="bi icon-eye" (click)="password()"></i>
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">Password is required</div>
+              </div>
+        </div>
+      
+    </div>
+    </div>
+    <!-- <div class="row form-group justify-content-center">
+    <div class="col-sm-12 link-content">
+        <a [routerLink]="''">Forgot Password</a>
+    </div>
+    </div> -->
+    <div class="row form-group justify-content-center">
+        <div class="col-12">
+            <button  type="submit"
+            class="btn btn-custom">Login</button>
+        </div>
+    </div>
+    <div class="row form-group justify-content-center">
+        <div class="col-sm-12">
+            <h1 class="add-straight-line"> <a [routerLink]="'/outer/register'"><span>Or SignUp With</span></a></h1>
+        </div>
+    </div>
+      </form>
+    </div>
+  
+                </div>
+            </div>
+            </div>
+            <!-- <div class="col-sm-4 px-0">
+                <div class="row form-group justify-content-center">
+                    <div class="col-sm-12">
+                        <button class="btn btn-email-address"><i></i>Login with email</button>
+                        <button class="btn btn-mobile-number"><i></i>Login with Mobile Number</button>
+                    </div>
+                    <p class="text-center">Or</p>
+                    <hr>
+                   
+
+                </div>
+            </div> -->
+    <div class="col-sm-2"></div>
+    </div>
+    <div class="loader" *ngIf="showLoader"></div>
+</div>
+<div class="bg-img-container">
+    <div class="imageBlock"></div>
+</div>

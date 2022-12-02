@@ -1,0 +1,145 @@
+<div class="container mt-3">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-sm-6 offest-3 align-middle">
+      <div class="card">
+        <div class="card-body">
+          <div class="row justify-content-center">
+            <div class="col-12" style="height: 15vh;">
+                <button type="submit" class="btn btn-custom-Company" (click)="showSelectedcomp()">Company Info</button>
+                <span>...................................................
+                    <button type="submit" class="btn btn-custom-Iso" (click)="showSelectedIso()">ISO</button></span>
+              </div>            
+          </div>
+          <div class="row justify-content-center">
+            <h6 class="text-center"></h6>
+          </div>
+          <div class="row justify-content-center" *ngIf="companySelected">
+            <form [formGroup]="signupForm" (ngSubmit)="btn_onClickSignUp()">
+              <div class="row form-group justify-content-center">
+                <div class="col-sm-12">
+                  <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    autocomplete="off"
+                    name="username"
+                    placeholder="Company Name"
+                    required
+                    formControlName="user_name"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['user_name'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['user_name'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['user_name'].errors['required']">
+                      Username is required
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group justify-content-center">
+                <div class="col-sm-12">
+                  <input
+                    type="email"
+                    class="form-control form-control-lg"
+                    pattern=""
+                    autocomplete="off"
+                    name="email"
+                    placeholder="Company Address"
+                    required
+                    formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                  />
+                  <div
+                    *ngIf="submitted && f['email'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['email'].errors['required']">
+                      Email is required
+                    </div>
+                    <div *ngIf="f['email'].errors['pattern']">
+                      Please enter a vaild email
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row form-group justify-content-center">
+                <div class="col-sm-12">
+                  <input
+                    type="tel"
+                    class="form-control form-control-lg"
+                    name="Mobile Number"
+                    autocomplete="off"
+                    placeholder="Company Code"
+                    maxlength="10"
+                    required
+                    formControlName="phone_number"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    onpaste="return false"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['phone_number'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['phone_number'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['phone_number'].errors['required']">
+                      Mobile Number is required
+                    </div>
+                    <div *ngIf="f['phone_number'].errors['pattern']">
+                      Mobile number must be 10 digit long
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row form-group justify-content-center">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-custom">Next</button>
+                </div>
+              </div>
+              <!-- <div class="row form-group justify-content-center">
+    <div class="col-sm-12">
+        <p>Have already an account?&nbsp;<span><a [routerLink]="'/outer/login'"><b>Login</b></a></span></p>
+    </div>
+</div> -->
+            </form>
+          </div>
+          <div class="row justify-content-center" *ngIf="ISOSelected">
+            <div class="row justify-content-center">
+              <div class="row  justify-content-center" style="line-height: 68px;">
+                <div class="col-12">
+                  <h2><b style="display: flex; justify-content:center;height: 10vh;">Is your company ISO certified?</b></h2>
+                  <!-- <button type="submit" class="btn btn-custom">Submit</button> -->
+                </div>
+                <div class="col-12" style="    display: flex;
+                justify-content: center;
+                height: 15vh;">
+                  <button type="submit" class="btn btn-custom">Yes</button>&nbsp;&nbsp;&nbsp;
+                  <button type="submit" class="btn btn-custom">No</button>
+                </div>
+              
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-12" style="display: flex; justify-content:center;">
+                  <button type="submit" class="btn btn-custom" routerLink="/main/home">Submit</button>
+                </div>
+              </div>
+              
+            <!-- </form> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="loader" *ngIf="showLoader"></div>
+</div>
+<div class="bg-img-container">
+  <div class="imageBlock"></div>
+</div>
+

@@ -1,0 +1,146 @@
+
+.signupCard{
+    background: rgb(53,92,192);
+    height: inherit;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.adding-radius-login-card{
+    border-radius: 26px;
+
+}
+.login-color{
+    color: #000080;
+}
+.form-group{
+   padding: 10px 0px;
+   text-align: center;
+   justify-content: center;
+}
+input{
+    width: 300px;
+    border: 1px solid #000080;
+    height: 40px;
+    margin: auto;
+    font-size: 14px;
+    border-radius: 21px;
+}
+.btn-custom{
+    background: #000080;
+    color: #fff;
+    width: 293px;
+    border: 1px solid #fff;
+    height: 40px;
+    border-radius: 19px;
+}
+
+.btn-mobile-number{
+    background: #243F5D;
+    color: #fff;
+    width: inherit;
+    border: 1px solid #fff;
+    height: 45px;
+    border-radius: 30px;
+}
+.btn-email-address{
+    background: #243F5D;
+    color: #fff;
+    width: inherit;
+    border: 1px solid #fff;
+    height: 45px;
+    border-radius: 30px;
+}
+form{
+    justify-content: center;
+}
+h2,h6{
+    color: #243F5D;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.link-content{
+    justify-content: start;
+}
+
+.link-content>a{
+    color:#243F5D;
+    cursor: pointer;
+}
+
+.container{
+    position: absolute;
+    top:20%;
+    left: 5%;
+    
+}
+.icon-eye{
+    position: absolute;
+     top: 13px;
+      left: 72%;
+       cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+    .icon-eye{
+        position: absolute;
+         top: 16px;
+          left: 70%;
+           cursor: pointer;
+    }
+}
+@media screen and (max-width: 768px) {
+    input{
+    width: 100%;
+        border: 1px solid #243F5D;
+        height: 40px;
+            margin: auto;
+            font-size: 12px;
+    }
+    .container {
+        position: absolute;
+        top: 10%;
+        left: 0%;
+    }
+    .icon-eye{
+        position: absolute;
+        top: 10px;
+        left: 80%;
+           cursor: pointer;
+    }
+    h2,h6{
+       font-size: inherit;
+    }
+   
+}
+
+.loginContent{
+    background-image: url('./../../../assets/images/bg.jpg');
+}
+
+.add-straight-line {
+    font-size: 15px;
+}
+.add-straight-line::before,
+.add-straight-line::after {
+    display: inline-block;
+    content: "";
+    border-top: solid black;
+    width: 86px;
+    margin: 0 1rem;
+    transform: translateY(-1rem);
+}
+.imageBlock {
+    background-image: url("../../../assets/images/welcome-bg.png");
+    background-size: 100% 100%;
+    /* // background-color: red !important; */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: inherit;
+  
+    height: 100vh;
+    width: 50%;
+  }
